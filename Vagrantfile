@@ -1,9 +1,23 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+class Hash
+  def slice(*keep_keys)
+    h = {}
+    keep_keys.each { |key| h[key] = fetch(key) if has_key?(key) }
+    h
+  end unless Hash.method_defined?(:slice)
+  def except(*less_keys)
+    slice(*keys - less_keys)
+  end unless Hash.method_defined?(:except)
+end
+
+
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/xenial64"
+  # This is a dummy box as AWS doesn't need to use a vagrant box file
+  config.vm.box = "dummy"
 
   # This VM defines the vm that will pull data
   # from the dbserver and display it on a php page
