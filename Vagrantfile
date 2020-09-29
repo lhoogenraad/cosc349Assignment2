@@ -19,6 +19,51 @@ Vagrant.configure("2") do |config|
   # This is a dummy box as AWS doesn't need to use a vagrant box file
   config.vm.box = "dummy"
 
+
+	config.vm.provider :aws do |aws, override|
+		# The region for Amazon Educate is fixed. Our region is us-east-1
+		aws.region = "us-east-1"
+
+		# These options force synchronisation of files to the VM's
+		# /vagrant directory using rsync, rather than using trying to use
+		# SMB (which will not be available by default).
+		override.nfs.functional = false
+		override.vm.allowed_synced_folder_types = :rsync
+		
+		# The keypair_name parameter tells Amazon which public key to use.
+		aws.keypair_name = "cosc349-lab9"
+		# This is the path to our private key.
+		override.ssh.private_key_path = "~/.ssh/cosc349-lab9.pem"
+
+		# Choose your Amazon EC2 instance type (t2.micro is cheap).
+		aws.instance_type = "t2.micro"
+
+		# You need to indicate the list of security groups your VM should
+		# be in. Each security group will be of the form "sg-...", and
+		# they should be comma-separated (if you use more than one) within
+		# square brackets.
+		#
+		aws.security_groups = ["sg-001778758a9950696", "sg-0ca77cbf975ff3daa"]
+
+		# For Vagrant to deploy to EC2 for Amazon Educate accounts, it
+		# seems that a specific availability_zone needs to be selected
+		# (will be of the form "us-east-1a"). The subnet_id for that
+		# availability_zone needs to be included, too (will be of the form
+		# "subnet-...").
+		aws.availability_zone = "us-east-1f"
+		aws.subnet_id = "subnet-0a48d504"
+		
+		# This tells aws what disk image to use.
+		# This one is a pretty standard ubuntu image.
+		aws.ami = "ami-0f40c8f97004632f9"
+		
+		# If using Ubuntu, you probably also need to uncomment the line
+		# below, so that Vagrant connects using username ubuntu
+		override.ssh.username = "ubuntu"
+		
+	end
+
+
   # This VM defines the vm that will pull data
   # from the dbserver and display it on a php page
   config.vm.define "display" do |display|
