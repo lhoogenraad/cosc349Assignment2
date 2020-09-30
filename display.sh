@@ -9,12 +9,18 @@ apt-get install -y apache2 php libapache2-mod-php php-mysql
 # to use the one from the shared folder
 cp /vagrant/display.conf /etc/apache2/sites-available/
 
+chmod 755 /vagrant
+chmod 755 /vagrant/www
+chmod 755 /vagrant/www/display
+chmod 755 /vagrant/www/display/index.css
+chmod 755 /vagrant/www/display/index.php
+
 # Activating our website config
-#a2ensite display
+a2ensite display
 
 # Disabling the default website apache2 gives
-#a2dissite 000-default
+a2dissite 000-default
 
 # Reloading the webserver config to affect our changes
-#service apache2 reload
+service apache2 reload
 
