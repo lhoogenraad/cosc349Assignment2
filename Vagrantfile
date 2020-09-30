@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
 	#display.vm.network "private_network", ip: "192.168.2.11"
 	
 	# This is where we set up our synced folders on our physical machine
-	display.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+	#display.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
 	
 	# This line calls our shell script to set up our vm when it boots
 	display.vm.provision "shell", path: "display.sh"
@@ -95,7 +95,7 @@ Vagrant.configure("2") do |config|
 	#dbserver.vm.network "private_network", ip: "192.168.2.12"
 	
 	# This is where we set up our synced folders on our physical machine
-	dbserver.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+	#dbserver.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
 	
 	# This line calls our shell script to set up our vm when it boots
 	dbserver.vm.provision "shell", path: "dbserver.sh"
@@ -115,7 +115,7 @@ Vagrant.configure("2") do |config|
 	#upload.vm.network "private_network", ip: "192.168.2.10"
 	
 	# This is where we set up our synced folders on our physical machine
-	upload.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+	#upload.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
 	
 	# This line calls our shell script to set up our vm when it boots
 	upload.vm.provision "shell", path: "upload.sh"
