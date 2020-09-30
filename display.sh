@@ -9,10 +9,6 @@ apt-get install -y apache2 php libapache2-mod-php php-mysql
 # to use the one from the shared folder
 cp /vagrant/display.conf /etc/apache2/sites-available/
 
-chmod 777 /vagrant/www/display
-chmod 777 /vagrant/www/display/index.php
-chmod 777 /vagrant/www/display/index.css
-
 # Activating our website config
 a2ensite display
 
