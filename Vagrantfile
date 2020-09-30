@@ -73,8 +73,9 @@ Vagrant.configure("2") do |config|
 	# This network is where we port forward to our local loopback server
 	display.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 	
-	# This network is our private network where the vm's will communicate
-	display.vm.network "private_network", ip: "192.168.2.11"
+	# This network is our private network where the vm's will communicate, i believe this isn't
+	# required when operating on AWs
+	#display.vm.network "private_network", ip: "192.168.2.11"
 	
 	# This is where we set up our synced folders on our physical machine
 	display.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
@@ -91,7 +92,7 @@ Vagrant.configure("2") do |config|
 	dbserver.vm.hostname = "dbserver"
 	
 	# This network is our private network where the vm's will communicate
-	dbserver.vm.network "private_network", ip: "192.168.2.12"
+	#dbserver.vm.network "private_network", ip: "192.168.2.12"
 	
 	# This is where we set up our synced folders on our physical machine
 	dbserver.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
@@ -111,7 +112,7 @@ Vagrant.configure("2") do |config|
 	upload.vm.network "forwarded_port", guest: 80, host: 8090, host_ip: "127.0.0.1"
 	
 	  # This network is our private network where the vm's will communicate
-	upload.vm.network "private_network", ip: "192.168.2.10"
+	#upload.vm.network "private_network", ip: "192.168.2.10"
 	
 	# This is where we set up our synced folders on our physical machine
 	upload.vm.synced_folder ".", "/vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
