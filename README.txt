@@ -88,3 +88,4 @@ At the very bottom of uploadToDB.php, there is a function call to redirect the u
 it's pretty awful practice to leave the user on the empty page meant for handling a form submission.
 
 
+http://ec2-3-235-141-108.compute-1.amazonaws.com/
