@@ -16,7 +16,7 @@
         <input type="text" name="username" id="username" placeholder="Username (optional)">
         <input type="submit" id="submit" value="Submit">
       </form>
-      <a href="ec2-34-204-188-157.compute-1.amazonaws.com">Back to Home</a>
+      <a href="http://ec2-34-204-188-157.compute-1.amazonaws.com">Back to Home</a>
    </body>
 </html>
 
