@@ -14,6 +14,7 @@ chmod 755 /vagrant/www
 chmod 755 /vagrant/www/display
 chmod 755 /vagrant/www/display/index.css
 chmod 755 /vagrant/www/display/index.php
+chmod 755 /vagrant/www/display/favicon.ico
 
 # Activating our website config
 a2ensite display

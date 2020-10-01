@@ -22,8 +22,11 @@ $db_passwd = 'examanswers123';
 
 $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
+try{
 $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
-
+}catch(PDOException $e){
+echo $e->getMessage();
+}
 
 $q = $pdo->query("SELECT * FROM answers");
 
