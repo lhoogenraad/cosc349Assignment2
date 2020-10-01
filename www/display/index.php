@@ -14,10 +14,11 @@
 <?php
 
   // These vars are used to connect to the mysql db automatically (basically makes code cleaner)
-$db_host = '192.168.2.12';
-$db_name = 'examanswers';
-$db_user = 'webuser';
-$db_passwd = 'db_pw';
+$db_host = 'examanswersdb.craafeyaeyxp.us-east-1.rds.amazonaws.com';
+$db_name = 'examanswersdb';
+// not sure if i should be using the admin account for this.. 
+$db_user = 'examadmin';
+$db_passwd = 'examanswers123';
 
 $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
