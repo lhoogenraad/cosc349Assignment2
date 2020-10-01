@@ -15,19 +15,14 @@
 
   // These vars are used to connect to the mysql db automatically (basically makes code cleaner)
 $db_host = 'examanswersdb.craafeyaeyxp.us-east-1.rds.amazonaws.com';
-$db_name = 'examanswersdb';
+$db_name = 'examanswers';
 // not sure if i should be using the admin account for this.. 
 $db_user = 'examadmin';
 $db_passwd = 'examanswers123';
 
 $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
-try{
 $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
-}catch(PDOException $e){
-echo $e->getMessage();
-}
-
 $q = $pdo->query("SELECT * FROM answers");
 
 // While we have data left from our select query, output that data to the table
