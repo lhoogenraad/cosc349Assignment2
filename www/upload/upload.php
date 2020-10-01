@@ -16,7 +16,7 @@
         <input type="text" name="username" id="username" placeholder="Username (optional)">
         <input type="submit" id="submit" value="Submit">
       </form>
-      <a href="http://127.0.0.1:8080/index.php">Back to Home</a>
+      <a href="ec2-34-204-188-157.compute-1.amazonaws.com">Back to Home</a>
    </body>
 </html>
 

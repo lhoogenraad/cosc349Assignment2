@@ -36,5 +36,5 @@
       // This line of code redirects the user to the home page, as leaving
       // the user on a blank page made for php code is a bit ugly!
       // Feel free to comment it out if you're about that though.
-      header("Location: http://127.0.0.1:8080/index.php");
+      header("Location: ec2-34-204-188-157.compute-1.amazonaws.com");
     ?>
