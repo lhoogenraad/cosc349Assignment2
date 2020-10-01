@@ -1,8 +1,8 @@
     <?php
-      $db_host = '192.168.2.12';
+      $db_host = 'examanswersdb.craafeyaeyxp.us-east-1.rds.amazonaws.com';
       $db_name = 'examanswers';
-      $db_user = 'webuser';
-      $db_passwd = 'db_pw';
+      $db_user = 'examadmin';
+      $db_passwd = 'examanswers123';
 
       $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
