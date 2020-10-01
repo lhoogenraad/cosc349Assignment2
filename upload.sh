@@ -10,6 +10,7 @@ chmod 755 /vagrant/www
 chmod 755 /vagrant/www/upload
 chmod 755 /vagrant/www/upload/upload.css
 chmod 755 /vagrant/www/upload/upload.php
+chmod 755 /vagrant/www/upload/favicon.ico
 
 # Here we change the VM's web server config
 # to use the one from the shared folder
