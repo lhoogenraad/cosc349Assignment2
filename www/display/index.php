@@ -31,6 +31,6 @@ while($row = $q->fetch()){
 }
 ?>
 </table>
-<a href="http://ec2-35-171-146-62.compute-1.amazonaws.com/upload.php">Upload an Answer</a>
+<a href="http://ec2-3-237-9-123.compute-1.amazonaws.com/upload.php">Upload an Answer</a>
 </body>
 </html>
